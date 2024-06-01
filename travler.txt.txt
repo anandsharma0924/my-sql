@@ -1,0 +1,21 @@
+create database StarTravels;
+use StarTravels;
+create table AdminData(AdminId int , AdminPass varchar(100));
+create table UserData(UserId int auto_increment , UserName varchar(300),UserAge int , UserEmail varchar(300),UserPass varchar(350),primary key(UserId))auto_increment=1000;
+create table BusData(BusNumber varchar(300),StartLocation varchar(350), EndLocation varchar(350),DepartureTime time , ArrivalTime time,ReturnDepartureTime time , ReturnArrivalTime time , TotalSeat int , SeatPrice int);
+create table BookingData(BookingId int auto_increment , userId int , BusNumber varchar(300),FromLocation varchar(300) , ToLocation varchar(300),BookingDate date,TotalSeat int , TotalAmount int , primary key(BookingId))auto_increment=1;
+create table FeedBackData(FeedBackId int auto_increment , userId int , BusNumber varchar(300),Rating int,primary key(FeedBackId))auto_increment=1;
+show tables;
+insert into AdminData values(1212 , 'info@123');
+insert into Userdata(Username,UserAge,UserEmail,UserPass)values('anand Kumar',25,'ramesh123@gmail.com','ramesh123');
+insert into BusData values('MP09MK8877','ujjain','indore','10:00:00','11:30:00','15:30:00','17:00:00',40,50,'non-Ac');
+insert into BookingData(userId,BusNumber,FromLocation,ToLocation,BookingDate,TotalSeat,TotalAmount)values(1000,'MP09MK9789','Indore','Ujjain','2024-01-1',2,100);
+insert into FeedBackData(userId , BusNumber , Rating) values(1000,'MP09MK9789',4);
+select * from AdminData;
+select * from Userdata;
+select * from BusData;
+
+select * from BookingData;
+select * from FeedBackData;
+alter table BusData add BusType varchar(200);
+update BusData set BusType='AC-Seater';
